@@ -1,0 +1,98 @@
+Scenario 1: High-Velocity Social Media Feed
+
+Decision: NoSQL (Document / Distributed Database)
+
+Justification:
+
+1️⃣ Horizontal Scalability
+A social media feed must handle millions of concurrent users and high write/read throughput.
+NoSQL databases (e.g., document-based systems) scale horizontally across many servers more easily than traditional SQL systems.
+This supports massive traffic growth.
+
+2️⃣ Schema Flexibility
+Social media data is unpredictable:
+
+Posts may contain text, images, videos, reactions
+
+New features (polls, stories, live streams) are added frequently
+
+NoSQL allows flexible or schema-less design, enabling rapid iteration without costly migrations.
+
+3️⃣ High Write Performance
+Feeds require:
+
+Fast post creation
+
+Real-time likes and comments
+
+Continuous updates
+
+NoSQL systems are optimized for high write velocity and distributed architectures.
+
+4️⃣ Eventual Consistency is Acceptable
+A feed can tolerate slight delays in synchronization.
+Strict ACID consistency is not critical for likes or view counters.
+
+Conclusion for Scenario 1:
+
+NoSQL is preferred due to:
+
+Horizontal scalability
+
+Schema flexibility
+
+High performance under massive load
+
+Scenario 2: Secure Bank Ledger
+
+Decision: SQL (Relational Database)
+
+Justification:
+
+1️⃣ ACID Compliance (Critical Requirement)
+Banking systems require:
+
+Atomicity (transactions complete fully or not at all)
+
+Consistency (no invalid states)
+
+Isolation (no dirty reads)
+
+Durability (data never lost after commit)
+
+Relational databases provide full ACID guarantees, which are essential for financial transactions.
+
+2️⃣ Strong Data Integrity & Constraints
+Bank ledgers require:
+
+Foreign keys
+
+CHECK constraints
+
+Strict schemas
+
+Referential integrity
+
+SQL databases enforce strict rules at the database level.
+
+3️⃣ Precision for Financial Data
+SQL supports:
+
+DECIMAL data types
+
+Strict transaction handling
+
+Floating inconsistencies or eventual consistency models are unacceptable in banking.
+
+4️⃣ Vertical Scaling with Controlled Environment
+Banking systems prioritize reliability over massive social scaling.
+Vertical scaling (high-performance servers) with replication is common in financial infrastructure.
+
+Conclusion for Scenario 2:
+
+SQL is required due to:
+
+ACID guarantees
+
+Strict consistency
+
