@@ -1,0 +1,23 @@
+1. JOIN Distinction
+
+The main difference is that an INNER JOIN only returns rows where there is a match in both tables, while a LEFT JOIN returns all rows from the left table even if there is no matching row in the right table. If there is no match, the result from the right table will be NULL.
+
+2. Aggregation Logic
+
+The HAVING clause is used to filter grouped data after aggregate functions like SUM() or COUNT() are applied. We cannot use WHERE for this purpose because WHERE filters rows before grouping and cannot work with aggregate functions.
+
+3. PDO Definition
+
+PDO stands for PHP Data Objects.
+Two advantages of PDO are:
+
+It supports multiple database systems.
+It provides better security through prepared statements.
+4. Security (Prepared Statements)
+
+Prepared statements protect against SQL Injection by separating the SQL query from user input. The query is prepared first, and user data is bound later, so the input cannot be executed as SQL code.
+
+5. Execution Flow
+
+The typical order of execution is:
+WHERE → GROUP BY → HAVING
