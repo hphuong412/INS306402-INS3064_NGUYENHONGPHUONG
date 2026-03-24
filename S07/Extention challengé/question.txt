@@ -1,0 +1,58 @@
+1. How do I JOIN 3–4 tables without getting confused?
+
+To avoid confusion when joining multiple tables:
+
+First, understand the relationships between tables (Primary Key – Foreign Key)
+Join tables step by step
+Use aliases to make the query easier to read
+
+Example:
+
+FROM orders o
+JOIN order_items oi ON o.id = oi.order_id
+JOIN products p ON oi.product_id = p.id
+JOIN categories c ON p.category_id = c.id
+
+Conclusion:
+Join tables step by step and use aliases to keep the query clear.
+
+2. When should I use a View instead of a direct query?
+
+A View should be used when:
+
+The query is complex (multiple JOINs)
+The query is reused frequently
+You want to simplify or hide complex SQL logic
+
+Avoid using Views when:
+
+The query is simple
+High performance is required
+
+Conclusion:
+Views help simplify and reuse complex queries.
+
+3. Common PDO connection errors and how to fix them?
+
+Common errors include:
+
+Incorrect database credentials (host, username, password)
+Missing database name (dbname)
+MySQL server not running
+
+Correct example:
+
+new PDO("mysql:host=localhost;dbname=ecommerce_db", "root", "");
+
+Conclusion:
+Most PDO errors are caused by incorrect configuration.
+
+4. Do indexes slow down write operations (INSERT/UPDATE)?
+
+Yes, indexes can slow down write operations.
+
+Indexes improve SELECT performance (faster reads)
+But they slow down INSERT and UPDATE because the index must also be updated
+
+Conclusion:
+There is a trade-off between read performance and write performance.
